@@ -1,0 +1,4 @@
+[submodule "incrementum-ludus"]
+	path = incrementum-ludus
+	url = https://github.com/yannickbattail/incrementum-ludus.git
+	branch = master
