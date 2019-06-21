@@ -98,7 +98,7 @@ var Scenario = (function () {
     function Scenario() {
     }
     Scenario.initEngine = function () {
-        var engine = new Engine();
+        var engine = new IncrementumLudus();
         engine.player = new Player("dignichose");
         engine.player.setPreventNegativeStorage(true);
         engine.player.increaseStorage(Q(1, LEVEL));

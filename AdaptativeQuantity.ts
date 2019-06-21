@@ -1,10 +1,10 @@
-/// <reference path="incrementum-ludus/Engine/interfaces/IResource.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/IQuantity.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/IProducer.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/ITrigger.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/ICrafter.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/IPlayer.ts" />
-/// <reference path="incrementum-ludus/Engine/Engine.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IResource.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IQuantity.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IProducer.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/ITrigger.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/ICrafter.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IPlayer.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/IncrementumLudus.ts" />
 
 class AdaptativeQuantity implements IQuantity {
     $type : string = 'AdaptativeQuantity';
@@ -26,7 +26,7 @@ class AdaptativeQuantity implements IQuantity {
         return rq;
     }
     private getVariableQuanity() : Quantity {
-        let e : Engine = engine;
+        let e : IncrementumLudus = engine;
         if (e.player.hasResources([this.quantityStep])) {
             return this.quantityIfYes;
         }

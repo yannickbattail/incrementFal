@@ -3,7 +3,7 @@ var Gui = (function () {
     function Gui(engine) {
         this.engine = engine;
         this.intervalId = 0;
-        this.engineStatus = EngineStatus.NOT_YET_STARTED;
+        this.engineStatus = IncrementumLudusStatus.NOT_YET_STARTED;
         this.engine = engine;
     }
     Gui.prototype.displayLevel = function () {
@@ -171,10 +171,10 @@ var Gui = (function () {
         var h = '';
         triggers.forEach(function (trig) {
             h += "<tr>";
-            if (trig.getChangeEngineStatus() == EngineStatus.WIN) {
+            if (trig.getChangeEngineStatus() == IncrementumLudusStatus.WIN) {
                 h += '<td>[<span class="win" title="Atteindre cet objectif et c\'est gagné.">Gagné</span>] ' + trig.getName() + "</td>";
             }
-            else if (trig.getChangeEngineStatus() == EngineStatus.LOOSE) {
+            else if (trig.getChangeEngineStatus() == IncrementumLudusStatus.LOOSE) {
                 h += '<td>[<span class="loose" title="Perdu, si cet objectif est atteint.">Perdu</span>] ' + trig.getName() + "</td>";
             }
             else {
@@ -289,13 +289,13 @@ var Gui = (function () {
         return false;
     };
     Gui.prototype.loose = function () {
-        if (this.engine.status == EngineStatus.LOOSE
-            && this.engineStatus != EngineStatus.LOOSE) {
+        if (this.engine.status == IncrementumLudusStatus.LOOSE
+            && this.engineStatus != IncrementumLudusStatus.LOOSE) {
             this.endGame(false, "Tu as trop vomis c'est pas bien!! Tu aura plus de chance le(a) prochain(e) foie(s).");
             this.engineStatus = this.engine.status;
         }
-        if (this.engine.status == EngineStatus.WIN
-            && this.engineStatus != EngineStatus.WIN) {
+        if (this.engine.status == IncrementumLudusStatus.WIN
+            && this.engineStatus != IncrementumLudusStatus.WIN) {
             this.endGame(true, "C'est bien, tu as gagné ! Mais guette les prochaines évolutions du jeu.");
             this.engineStatus = this.engine.status;
         }

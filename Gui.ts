@@ -1,10 +1,10 @@
-/// <reference path="incrementum-ludus/Engine/interfaces/IResource.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/IQuantity.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/IProducer.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/ITrigger.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/ICrafter.ts" />
-/// <reference path="incrementum-ludus/Engine/interfaces/IPlayer.ts" />
-/// <reference path="incrementum-ludus/Engine/Engine.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IResource.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IQuantity.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IProducer.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/ITrigger.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/ICrafter.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/interfaces/IPlayer.ts" />
+/// <reference path="incrementum-ludus/IncrementumLudus/IncrementumLudus.ts" />
 
 /// <reference path="./CategorizedMaterial.ts" />
 /// <reference path="./CategorizedItem.ts" />
@@ -13,7 +13,7 @@
 
 class Gui {
     intervalId : number = 0;
-    constructor(private engine: Engine) {
+    constructor(private engine: IncrementumLudus) {
         this.engine = engine;
     }
 
@@ -196,9 +196,9 @@ class Gui {
         triggers.forEach(
             trig => {
                 h += "<tr>";
-                if (trig.getChangeEngineStatus() == EngineStatus.WIN) {
+                if (trig.getChangeEngineStatus() == IncrementumLudusStatus.WIN) {
                     h += '<td>[<span class="win" title="Atteindre cet objectif et c\'est gagné.">Gagné</span>] ' + trig.getName() + "</td>";
-                } else if (trig.getChangeEngineStatus() == EngineStatus.LOOSE) {
+                } else if (trig.getChangeEngineStatus() == IncrementumLudusStatus.LOOSE) {
                     h += '<td>[<span class="loose" title="Perdu, si cet objectif est atteint.">Perdu</span>] ' + trig.getName() + "</td>";
                 } else {
                     h += '<td>' + trig.getName() + "</td>";
@@ -328,16 +328,16 @@ class Gui {
     }
 
 
-    private engineStatus : EngineStatus = EngineStatus.NOT_YET_STARTED;
+    private engineStatus : IncrementumLudusStatus = IncrementumLudusStatus.NOT_YET_STARTED;
 
     loose() {
-        if (this.engine.status == EngineStatus.LOOSE 
-            && this.engineStatus != EngineStatus.LOOSE) {
+        if (this.engine.status == IncrementumLudusStatus.LOOSE 
+            && this.engineStatus != IncrementumLudusStatus.LOOSE) {
                 this.endGame(false, "Tu as trop vomis c'est pas bien!! Tu aura plus de chance le(a) prochain(e) foie(s).");
                 this.engineStatus = this.engine.status;
         }
-        if (this.engine.status == EngineStatus.WIN
-            && this.engineStatus != EngineStatus.WIN) {
+        if (this.engine.status == IncrementumLudusStatus.WIN
+            && this.engineStatus != IncrementumLudusStatus.WIN) {
                 this.endGame(true, "C'est bien, tu as gagné ! Mais guette les prochaines évolutions du jeu.");
                 this.engineStatus = this.engine.status;
         }
