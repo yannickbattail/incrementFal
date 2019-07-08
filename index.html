@@ -162,6 +162,11 @@
         var gui = new Gui(engine);
         gui.start(200);
         engine.run(100, saveEngine);
+        engine.fastMode = null;
+        new KonamiCode(() => {
+            alert("konami code detected! Fast mode activated!");
+            engine.fastMode = 1000;
+        });
     </script>
     <div onclick="document.getElementById('debugMode').style.display='block';"><script>document.write(VERSION);</script></div>
     <div id="debugMode" style="display: none;">
