@@ -24,7 +24,8 @@ echo "open file fal/index.html" >> temp_dir/readme.txt
 echo "sources can be found here https://github.com/yannickbattail/incrementum-ludus" >> temp_dir/readme.txt
 
 cd temp_dir
-7z a incrementFal.zip ./
+zip incrementFal ./*
+#7z a incrementFal.zip ./
 cd ..
 
 rm -Rf temp_dir

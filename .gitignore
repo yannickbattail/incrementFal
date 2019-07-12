@@ -1,5 +1,6 @@
 *.map
 .vs
+node_modules/
 
 temp_dir
 incrementFal.zip
