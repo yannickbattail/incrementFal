@@ -32,7 +32,11 @@ var CategorizedMaterial = (function (_super) {
         var u = this.unit;
         var q = quantity;
         if (u == 'g') {
-            if (quantity >= 1000) {
+            if (quantity >= 1000000) {
+                u = 'T';
+                q = Math.round(q / 10000) / 100;
+            }
+            else if (quantity >= 1000) {
                 u = 'kg';
                 q = Math.round(q / 100) / 10;
             }

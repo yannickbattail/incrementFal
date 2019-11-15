@@ -11,7 +11,7 @@
 /// <reference path="./Level.ts" />
 /// <reference path="./Scenario.ts" />
 
-const VERSION = "3.1";
+const VERSION = "3.2";
 
 function loadEngine() : IncrementumLudus | null {
 

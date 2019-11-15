@@ -13,11 +13,13 @@ var LEVEL = new Level("level", "level.svg", [
     "Ancien(ne) faluchard(e)",
     "Hypothétique",
     "Grand(e) Maistre(sse)",
+    "Ancêtre"
 ]);
-var FALUCHE = new CategorizedItem("Faluche", "faluche.png", "global", "chat peau");
-var TEMPS = new CategorizedItem("temps", "clockwork.svg", "global", "TIC TAC, TIC TAC");
+var FALUCHE = new CategorizedItem("Faluche", "faluche.png", "global", "Chat peau");
+var TEMPS = new CategorizedItem("temps", "clockwork.svg", "global", "TIC TAC, TIC TAC! Cul-mule de Temps pour les événements.");
 var DISTANCE = new CategorizedMaterial("distance", "Km", "volant.png", "insigne", "Cul-mule de km, pour les cons en grès.");
-var TELLIGENCE = new CategorizedMaterial("telligence", "T", "brain.png", "global", "Facile, l'intelligence c'est l'inverse de la telligence");
+var TELLIGENCE = new CategorizedMaterial("telligence", "Te", "brain.png", "global", "Facile, l'intelligence c'est l'inverse de la telligence");
+var TELLIGENCE_ARTIF = new CategorizedMaterial("telligence artificielle", "TA", "artificial-intelligence.svg", "global", "see Telligence");
 var PARRAIN = new CategorizedItem("parrain", "parrain.png", "global", "Parrain, pas renne, marin, marraine ou encore témoin de jéhov... de mariage");
 var CODE_VILLE = new CategorizedItem("code de ville", "code.svg", "global", "Le code faluchard de la ville.");
 var SINGE = new CategorizedItem("singe", "singe.png", "insigne", "Monkey, quémandeur d'insignes. Ou p*te à pin's ça marche aussi.");
@@ -30,10 +32,10 @@ var CLE_DE_SOL = new CategorizedItem("clé de sol", "cle de sol.png", "insigne",
 var CASSEROLE = new CategorizedItem("casserole", "casserole.png", "insigne", "[malus] Ivre, virgule, il chante comme une ");
 var CH3CH2OH = new CategorizedMaterial("CH3CH2OH", "", "CH3CH2OH.png", "global", "C'est un liquide incolore, volatil, inflammable et miscible à l'eau en toutes proportions. C'est un psychotrope, et l'une des plus anciennes drogues récréatives, sous la forme de boisson alcoolisée. L'éthanol est utilisé par l'industrie agroalimentaire gnagna etc mes couilles sur ton front ça fai...<br />Bon ce qui compte c'est de ne pas dépasser les 10, sinon ton appareil digestif (gestif!) va fonctionner en sens inverse et ça ... c'est pas bien <img src=\"images/vomiting.svg\" class=\"resource_img\" />");
 var BIÈRE = new CategorizedMaterial("bière", "cl", "beer.svg", "global", "La bière est une boisson alcoolisée obtenue par fermentation alcoolique d'un moût de produits végétaux amylacés ... ho shit! amy quoi? bon gogole ==&gt; amylacé. ha mais ouiii!.<br />+1g de CH3CH2OH et +1secs");
-var VIN = new CategorizedMaterial("Vin", "cl", "verre_de_vin.svg", "global", "Vin: boisson alcoolisée ... qui fait gagner +3g de CH3CH2OH et +5secs (hey ça a un meilleur rapport qualité cuite que la bière ce truc)");
+var VIN = new CategorizedMaterial("vin", "cl", "verre_de_vin.svg", "global", "Vin: boisson alcoolisée ... qui fait gagner +3g de CH3CH2OH et +5secs (hey ça a un meilleur rapport qualité cuite que la bière ce truc)");
 var SEC = new CategorizedItem("sec", "chope or.png", "global", "Le Sec, devise monétaire en cours pour les rachats d'insigne divers. VERRE!");
 var VOMI = new CategorizedMaterial("vomi", "cl", "vomiting.svg", "global", "[malus] Le vomi (en centilitres). Bon je vais pas te faire un dessin... ha mais si je vais t'en faire un. <a href=\"https://tiny.cc/d4ze8y\">Voilà</a>... pardon aux familles toussa toussa.<br>Et surtout il ne faut pas dépacer 1litron de vomi (à un rythme de 100cl de vomi par VT c'est vite arrivé) sinon c'est le Mort.");
-var TRAQUENARD = new CategorizedItem("traquenard", "panda.png", "insigne", "Panda: Personne se faisant traquenader un peu trop facilement. (+1 par congrès participé)");
+var TRAQUENARD = new CategorizedItem("traquenard", "panda.png", "insigne", "Panda: Personne se faisant traquenader (un peu trop) facilement. (+1 par congrès participé)");
 var PACHY = new CategorizedMaterial("subtilitruc", "g", "pachy.png", "insigne", "le pachy, pour les gens qui n'ont pas la ... , oui ce machin là, la subtilitruc");
 var CAPOTE = new CategorizedItem("capote", "x/condom.png", "global", "Le sesque c'est bien, avec une capote c'est mieux, avec 2 capotes ... non vous êtes pas prêts. Capotte: permet de sexer une fois.");
 var ANNEAU = new CategorizedItem("anneau", "anneau.png", "insigne", "la bague ou l'anneau, représentant les liens sacrés du mariage faluchard, où 2 personnes (ou +) se jurent infidélité jusqu'à ce que la mo.. le PLS les sépare.");
@@ -41,6 +43,7 @@ var PENDU = new CategorizedItem("pendu", "pendu.png", "insigne", "Le(a) pendu(e)
 var CROIX_GM = new CategorizedItem("Croix de GM", "croix_GM.png", "insigne", "la croix de grand maistre");
 var POIREAU = new CategorizedItem("poireau/betterave", "x/poireau-betterave.png", "insigne", "Se faire prendre en train de faire des bisous là où on fait pipi.");
 var CAROTTE = new CategorizedItem("carotte", "x/carotte.png", "insigne", "Se faire prendre en train de copuler");
+var CHOU_FLEUR = new CategorizedItem("chou-fleur", "x/chou fleur.png", "insigne", "Partout Z");
 var NAVET = new CategorizedItem("navet", "x/navet.png", "insigne", "Se faire prendre en train de titiller le sphincter anal d'autrui.");
 var SESQUE = new CategorizedItem("sesque", "x/flying.png", "insigne", "Le sesque (flying foufoune et flying pénis), ben à chaque fois que tu choppes tu gagnes cet insigne. Pourquoi? Ben fallait bien un moyen pour compter combien de fois tu as choppé.");
 var MISSIONNAIRE = new CategorizedItem("missionnaire", "x/missionnaire.png", "insigne", "Position sescuelle (non pas SQL) la seule tolérée pas l'Église.");
@@ -86,9 +89,9 @@ var villeKm = {
     "Strasbourg": { "Lyon": 492, "Grenoble": 573, "Valence": 592, "Clermont": 544, "Dijon": 331, "Monpeul": 789, "Marseille": 798, "Nancy": 160, "Strasbourg": 0 }
 };
 var resourceList = [
-    FALUCHE, TEMPS, DISTANCE, TELLIGENCE, PARRAIN, CODE_VILLE, SINGE, BACCHUS, POULE,
+    FALUCHE, TEMPS, DISTANCE, TELLIGENCE, TELLIGENCE_ARTIF, PARRAIN, CODE_VILLE, SINGE, BACCHUS, POULE,
     POINT_COUTURE, CONGRES, CHANT, CLE_DE_SOL, CASSEROLE, CH3CH2OH, BIÈRE, VIN, SEC, VOMI, TRAQUENARD, PACHY, CAPOTE, ANNEAU, PENDU, CROIX_GM,
-    POIREAU, CAROTTE, NAVET, SESQUE, MISSIONNAIRE, POSITION69, LEVRETTE, VIRGINITE, FIN_BAISEUR, LIME,
+    POIREAU, CAROTTE, NAVET, CHOU_FLEUR, SESQUE, MISSIONNAIRE, POSITION69, LEVRETTE, VIRGINITE, FIN_BAISEUR, LIME,
     ADOPTION_INGE, ADOPTION_SCIENCES, ADOPTION_DROIT, ADOPTION_JAUNE, ADOPTION_ROSE, ADOPTION_SAGE_POUF, ADOPTION_PHARMA, ADOPTION_MEDECINE,
     PINS_INGE, PINS_SCIENCES, PINS_DROIT, PINS_JAUNE, PINS_ROSE, PINS_SAGE_POUF, PINS_PHARMA, PINS_MEDECINE,
     PINS_LYON, PINS_GRENOBLE, PINS_VALENCE, PINS_CLERMONT, PINS_DIJON, PINS_MONPEUL, PINS_MARSEILLE, PINS_NANCY, PINS_STASBOURG
@@ -97,6 +100,16 @@ var Q = function (quantity, res) { return new Quantity(quantity, res); };
 var Scenario = (function () {
     function Scenario() {
     }
+    Scenario.populateAll = function () {
+        resourceList.forEach(function (r) {
+            if (r.getName() != "vomi" && r.getName() != "CH3CH2OH") {
+                engine.player.increaseStorage(Q(1000, r));
+            }
+        });
+        engine.player.increaseStorage(Q(1000, BIÈRE));
+        var qu = engine.player.getResourceInStorage(CH3CH2OH.name);
+        qu.setQuantity(9);
+    };
     Scenario.initEngine = function () {
         var engine = new IncrementumLudus();
         engine.player = new Player("dignichose");
@@ -520,7 +533,31 @@ var Scenario = (function () {
             .and(Q(1, CAPOTE))
             .spawnResource(Q(1, CROIX_GM))
             .spawnResource(Q(1, LEVEL))
-            .thenWin()));
+            .appendTrigger(this.triggerAncetre())));
+    };
+    Scenario.triggerAncetre = function () {
+        return new Trigger('Ancêtre')
+            .whenReached(Q(51, TRAQUENARD))
+            .spawnResource(Q(1, LEVEL))
+            .spawnCrafter(new Crafter("Blagum")
+            .thatCraft(Q(1000 * 1000, PACHY))
+            .andCraft(Q(1, TELLIGENCE_ARTIF))["in"](7).seconds()
+            .atCostOf(Q(1, BIÈRE))
+            .atCostOf(Q(1, SEC))
+            .atCostOf(Q(1, PINS_INGE))
+            .atCostOf(Q(1, TELLIGENCE_ARTIF)))
+            .spawnCrafter(new Crafter("Chèvre")
+            .thatCraft(Q(1, TELLIGENCE_ARTIF))
+            .thatCraft(Q(1, CH3CH2OH))["in"](4.2).seconds()
+            .atCostOf(Q(100, TELLIGENCE)))
+            .spawnCrafter(new Crafter("TouZ")
+            .thatCraft(Q(1, CHOU_FLEUR))["in"](42).seconds()
+            .atCostOf(Q(1, POIREAU))
+            .atCostOf(Q(1, NAVET))
+            .atCostOf(Q(1, CAROTTE))
+            .atCostOf(Q(1, VIN))
+            .atCostOf(Q(1, PINS_SCIENCES))
+            .atCostOf(Q(1, TELLIGENCE)));
     };
     return Scenario;
 }());

@@ -27,83 +27,81 @@ const LEVEL = new Level("level", "level.svg", [
     "Ancien(ne) faluchard(e)",
     "Hypothétique",
     "Grand(e) Maistre(sse)",
+    "Ancêtre"
 ]);
-const FALUCHE               = new CategorizedItem("Faluche", "faluche.png", "global", "chat peau");
-const TEMPS                 = new CategorizedItem("temps", "clockwork.svg", "global", "TIC TAC, TIC TAC");
-const DISTANCE              = new CategorizedMaterial("distance", "Km", "volant.png", "insigne", "Cul-mule de km, pour les cons en grès.");
-const TELLIGENCE            = new CategorizedMaterial("telligence", "T", "brain.png", "global", "Facile, l'intelligence c'est l'inverse de la telligence");
-//const TELLIGENCE_ARTIF      = new CategorizedMaterial("telligence artificielle", "TA", "artificial-intelligence.svg");
-const PARRAIN               = new CategorizedItem("parrain", "parrain.png", "global", "Parrain, pas renne, marin, marraine ou encore témoin de jéhov... de mariage");
-const CODE_VILLE            = new CategorizedItem("code de ville", "code.svg", "global", "Le code faluchard de la ville.");
-const SINGE                 = new CategorizedItem("singe", "singe.png", "insigne", "Monkey, quémandeur d'insignes. Ou p*te à pin's ça marche aussi.");
-const BACCHUS               = new CategorizedItem("bacchus", "bacchus.png", "insigne", "Devant Bacchus dieu du vin, gambrinus héroa du... hein quoi? sa signification? ben dignité dans hips l'ivresse");
-const POULE                 = new CategorizedItem("poule", "poule.png", "insigne", "Poule: personne chaude. Poulet poulet piou piou piou!");
-const POINT_COUTURE         = new CategorizedItem("point de couture", "de-a-coudre.png", "insigne", "Oui ça existe pas dans le code gnagnagna, c'est juste pour representer des points de couture.");
-const CONGRES               = new CategorizedItem("congrès", "valise.png", "insigne", "haa la valise de congrès, sa tente, ses souvenirs et ses paillette Ha non pas les paillettes! Y en a une qui pop à chaque fois qu'on débloque un congrès.");
-const CHANT                 = new CategorizedItem("chant", "cle de fa argent.png", "insigne", "un chant, dont les thèmes récurrents sont : la consomation d'éthanol et la pratique du coït.");
-const CLE_DE_SOL            = new CategorizedItem("clé de sol", "cle de sol.png", "insigne", "Digne chanteur de paille hard. (faut 30 put*in de chants pour avoir ce truc)");
-const CASSEROLE             = new CategorizedItem("casserole", "casserole.png", "insigne", "[malus] Ivre, virgule, il chante comme une ");
-const CH3CH2OH              = new CategorizedMaterial("CH3CH2OH", "", "CH3CH2OH.png", "global", "C'est un liquide incolore, volatil, inflammable et miscible à l'eau en toutes proportions. C'est un psychotrope, et l'une des plus anciennes drogues récréatives, sous la forme de boisson alcoolisée. L'éthanol est utilisé par l'industrie agroalimentaire gnagna etc mes couilles sur ton front ça fai...<br />Bon ce qui compte c'est de ne pas dépasser les 10, sinon ton appareil digestif (gestif!) va fonctionner en sens inverse et ça ... c'est pas bien <img src=\"images/vomiting.svg\" class=\"resource_img\" />");
-const BIÈRE                 = new CategorizedMaterial("bière", "cl", "beer.svg", "global", "La bière est une boisson alcoolisée obtenue par fermentation alcoolique d'un moût de produits végétaux amylacés ... ho shit! amy quoi? bon gogole ==&gt; amylacé. ha mais ouiii!.<br />+1g de CH3CH2OH et +1secs");
-const VIN                   = new CategorizedMaterial("Vin", "cl", "verre_de_vin.svg", "global", "Vin: boisson alcoolisée ... qui fait gagner +3g de CH3CH2OH et +5secs (hey ça a un meilleur rapport qualité cuite que la bière ce truc)");
-const SEC                   = new CategorizedItem("sec", "chope or.png", "global", "Le Sec, devise monétaire en cours pour les rachats d'insigne divers. VERRE!");
-const VOMI                  = new CategorizedMaterial("vomi",  "cl", "vomiting.svg", "global", "[malus] Le vomi (en centilitres). Bon je vais pas te faire un dessin... ha mais si je vais t'en faire un. <a href=\"https://tiny.cc/d4ze8y\">Voilà</a>... pardon aux familles toussa toussa.<br>Et surtout il ne faut pas dépacer 1litron de vomi (à un rythme de 100cl de vomi par VT c'est vite arrivé) sinon c'est le Mort.");
-const TRAQUENARD            = new CategorizedItem("traquenard",  "panda.png", "insigne", "Panda: Personne se faisant traquenader un peu trop facilement. (+1 par congrès participé)");
-const PACHY                 = new CategorizedMaterial("subtilitruc", "g",  "pachy.png", "insigne", "le pachy, pour les gens qui n'ont pas la ... , oui ce machin là, la subtilitruc");
-const CAPOTE               = new CategorizedItem("capote", "x/condom.png", "global", "Le sesque c'est bien, avec une capote c'est mieux, avec 2 capotes ... non vous êtes pas prêts. Capotte: permet de sexer une fois.");
-const ANNEAU                = new CategorizedItem("anneau", "anneau.png", "insigne", "la bague ou l'anneau, représentant les liens sacrés du mariage faluchard, où 2 personnes (ou +) se jurent infidélité jusqu'à ce que la mo.. le PLS les sépare.");
-const PENDU                 = new CategorizedItem("pendu", "pendu.png", "insigne", "Le(a) pendu(e): Marié(e)");
-const CROIX_GM              = new CategorizedItem("Croix de GM", "croix_GM.png", "insigne", "la croix de grand maistre");
-
+//    VARIABLE              TYPE (Material a une unité en plus)   unité image                               catégorie   description
+const FALUCHE               = new CategorizedItem("Faluche",            "faluche.png",                      "global",   "Chat peau");
+const TEMPS                 = new CategorizedItem("temps",              "clockwork.svg",                    "global",   "TIC TAC, TIC TAC! Cul-mule de Temps pour les événements.");
+const DISTANCE              = new CategorizedMaterial("distance", "Km", "volant.png",                       "insigne",  "Cul-mule de km, pour les cons en grès.");
+const TELLIGENCE            = new CategorizedMaterial("telligence","Te","brain.png",                        "global",   "Facile, l'intelligence c'est l'inverse de la telligence");
+const TELLIGENCE_ARTIF      = new CategorizedMaterial("telligence artificielle","TA","artificial-intelligence.svg","global","see Telligence");
+const PARRAIN               = new CategorizedItem("parrain",            "parrain.png",                      "global",   "Parrain, pas renne, marin, marraine ou encore témoin de jéhov... de mariage");
+const CODE_VILLE            = new CategorizedItem("code de ville",      "code.svg",                         "global",   "Le code faluchard de la ville.");
+const SINGE                 = new CategorizedItem("singe",              "singe.png",                        "insigne",  "Monkey, quémandeur d'insignes. Ou p*te à pin's ça marche aussi.");
+const BACCHUS               = new CategorizedItem("bacchus",            "bacchus.png",                      "insigne",  "Devant Bacchus dieu du vin, gambrinus héroa du... hein quoi? sa signification? ben dignité dans hips l'ivresse");
+const POULE                 = new CategorizedItem("poule",              "poule.png",                        "insigne",  "Poule: personne chaude. Poulet poulet piou piou piou!");
+const POINT_COUTURE         = new CategorizedItem("point de couture",   "de-a-coudre.png",                  "insigne",  "Oui ça existe pas dans le code gnagnagna, c'est juste pour representer des points de couture.");
+const CONGRES               = new CategorizedItem("congrès",            "valise.png",                       "insigne",  "haa la valise de congrès, sa tente, ses souvenirs et ses paillette Ha non pas les paillettes! Y en a une qui pop à chaque fois qu'on débloque un congrès.");
+const CHANT                 = new CategorizedItem("chant",              "cle de fa argent.png",             "insigne",  "un chant, dont les thèmes récurrents sont : la consomation d'éthanol et la pratique du coït.");
+const CLE_DE_SOL            = new CategorizedItem("clé de sol",         "cle de sol.png",                   "insigne",  "Digne chanteur de paille hard. (faut 30 put*in de chants pour avoir ce truc)");
+const CASSEROLE             = new CategorizedItem("casserole",          "casserole.png",                    "insigne",  "[malus] Ivre, virgule, il chante comme une ");
+const CH3CH2OH              = new CategorizedMaterial("CH3CH2OH",   "", "CH3CH2OH.png",                     "global",   "C'est un liquide incolore, volatil, inflammable et miscible à l'eau en toutes proportions. C'est un psychotrope, et l'une des plus anciennes drogues récréatives, sous la forme de boisson alcoolisée. L'éthanol est utilisé par l'industrie agroalimentaire gnagna etc mes couilles sur ton front ça fai...<br />Bon ce qui compte c'est de ne pas dépasser les 10, sinon ton appareil digestif (gestif!) va fonctionner en sens inverse et ça ... c'est pas bien <img src=\"images/vomiting.svg\" class=\"resource_img\" />");
+const BIÈRE                 = new CategorizedMaterial("bière",    "cl", "beer.svg",                         "global",   "La bière est une boisson alcoolisée obtenue par fermentation alcoolique d'un moût de produits végétaux amylacés ... ho shit! amy quoi? bon gogole ==&gt; amylacé. ha mais ouiii!.<br />+1g de CH3CH2OH et +1secs");
+const VIN                   = new CategorizedMaterial("vin",      "cl", "verre_de_vin.svg",                 "global",   "Vin: boisson alcoolisée ... qui fait gagner +3g de CH3CH2OH et +5secs (hey ça a un meilleur rapport qualité cuite que la bière ce truc)");
+const SEC                   = new CategorizedItem("sec",                "chope or.png",                     "global",   "Le Sec, devise monétaire en cours pour les rachats d'insigne divers. VERRE!");
+const VOMI                  = new CategorizedMaterial("vomi",     "cl", "vomiting.svg",                     "global",   "[malus] Le vomi (en centilitres). Bon je vais pas te faire un dessin... ha mais si je vais t'en faire un. <a href=\"https://tiny.cc/d4ze8y\">Voilà</a>... pardon aux familles toussa toussa.<br>Et surtout il ne faut pas dépacer 1litron de vomi (à un rythme de 100cl de vomi par VT c'est vite arrivé) sinon c'est le Mort.");
+const TRAQUENARD            = new CategorizedItem("traquenard",         "panda.png",                        "insigne",  "Panda: Personne se faisant traquenader (un peu trop) facilement. (+1 par congrès participé)");
+const PACHY                 = new CategorizedMaterial("subtilitruc","g","pachy.png",                        "insigne",  "le pachy, pour les gens qui n'ont pas la ... , oui ce machin là, la subtilitruc");
+const CAPOTE                = new CategorizedItem("capote",             "x/condom.png",                     "global",   "Le sesque c'est bien, avec une capote c'est mieux, avec 2 capotes ... non vous êtes pas prêts. Capotte: permet de sexer une fois.");
+const ANNEAU                = new CategorizedItem("anneau",             "anneau.png",                       "insigne",  "la bague ou l'anneau, représentant les liens sacrés du mariage faluchard, où 2 personnes (ou +) se jurent infidélité jusqu'à ce que la mo.. le PLS les sépare.");
+const PENDU                 = new CategorizedItem("pendu",              "pendu.png",                        "insigne",  "Le(a) pendu(e): Marié(e)");
+const CROIX_GM              = new CategorizedItem("Croix de GM",        "croix_GM.png",                     "insigne",  "la croix de grand maistre");
 // potager
-const POIREAU               = new CategorizedItem("poireau/betterave", "x/poireau-betterave.png", "insigne", "Se faire prendre en train de faire des bisous là où on fait pipi.");
-const CAROTTE               = new CategorizedItem("carotte", "x/carotte.png", "insigne", "Se faire prendre en train de copuler");
-//const CHOU_FLEUR            = new CategorizedItem("chou-fleur", "x/chou fleur.png", "insigne");
-const NAVET                 = new CategorizedItem("navet", "x/navet.png", "insigne", "Se faire prendre en train de titiller le sphincter anal d'autrui.");
-
-const SESQUE                = new CategorizedItem("sesque", "x/flying.png", "insigne", "Le sesque (flying foufoune et flying pénis), ben à chaque fois que tu choppes tu gagnes cet insigne. Pourquoi? Ben fallait bien un moyen pour compter combien de fois tu as choppé.");
-const MISSIONNAIRE          = new CategorizedItem("missionnaire", "x/missionnaire.png", "insigne", "Position sescuelle (non pas SQL) la seule tolérée pas l'Église.");
-const POSITION69            = new CategorizedItem("69", "x/69.png", "insigne", "la position 69: poils aux dents!");
-const LEVRETTE              = new CategorizedItem("levrette", "x/levrette.png", "insigne", "La levrette: femelle du levrier");
-
-//const FLECHE                = new CategorizedItem("flêche", "x/fleche.png", "insigne");
-//const ETOILES_DE_MER        = new CategorizedItem("étoiles de mer", "x/etoiles de mer.png", "insigne");
-const VIRGINITE             = new CategorizedItem("feuille de vigne/rose", "x/vigne-rose.png", "insigne", "Perte de la viriginité");
-//const ROSE                  = new CategorizedItem("rose", "x/rose.png", "insigne");
-//const ORCHIDEE              = new CategorizedItem("orchidée", "x/orchidee.png", "insigne");
-const FIN_BAISEUR           = new CategorizedItem("pensée/epée", "x/fin-baiseur.png", "insigne", "Fin(e) baiseur(se) ou expert(e)");
-const LIME                  = new CategorizedItem("lime", "x/lime.png", "insigne", "[malus] Ivre, virgule, il/elle essaye de baiser. Bon on connait tous le résultat, ça bande mou, ça fait l'étoile de mer un veritable Acte laborieux");
-
-
+const POIREAU               = new CategorizedItem("poireau/betterave",  "x/poireau-betterave.png",          "insigne",  "Se faire prendre en train de faire des bisous là où on fait pipi.");
+const CAROTTE               = new CategorizedItem("carotte",            "x/carotte.png",                    "insigne",  "Se faire prendre en train de copuler");
+const CHOU_FLEUR            = new CategorizedItem("chou-fleur",         "x/chou fleur.png",                 "insigne",  "Partout Z");
+const NAVET                 = new CategorizedItem("navet",              "x/navet.png",                      "insigne",  "Se faire prendre en train de titiller le sphincter anal d'autrui.");
+//position sescuelle
+const SESQUE                = new CategorizedItem("sesque",             "x/flying.png",                     "insigne",  "Le sesque (flying foufoune et flying pénis), ben à chaque fois que tu choppes tu gagnes cet insigne. Pourquoi? Ben fallait bien un moyen pour compter combien de fois tu as choppé.");
+const MISSIONNAIRE          = new CategorizedItem("missionnaire",       "x/missionnaire.png",               "insigne",  "Position sescuelle (non pas SQL) la seule tolérée pas l'Église.");
+const POSITION69            = new CategorizedItem("69",                 "x/69.png",                         "insigne",  "la position 69: poils aux dents!");
+const LEVRETTE              = new CategorizedItem("levrette",           "x/levrette.png",                   "insigne",  "La levrette: femelle du levrier");
+// X
+//const FLECHE              = new CategorizedItem("flêche",             "x/fleche.png",                     "insigne",  "Élajucateur précoce");
+//const ETOILES_DE_MER      = new CategorizedItem("étoiles de mer",     "x/etoiles de mer.png",             "insigne",  "Se pose sur le dos et attend que ça se passe");
+const VIRGINITE             = new CategorizedItem("feuille de vigne/rose", "x/vigne-rose.png",              "insigne",  "Perte de la viriginité");
+//const ROSE                = new CategorizedItem("rose",               "x/rose.png",                       "insigne",  "Perte de la viriginité F");
+//const ORCHIDEE            = new CategorizedItem("orchidée",           "x/orchidee.png",                   "insigne",  "Perte de la viriginité F");
+const FIN_BAISEUR           = new CategorizedItem("pensée/epée",        "x/fin-baiseur.png",                "insigne",  "Fin(e) baiseur(se) ou expert(e)");
+const LIME                  = new CategorizedItem("lime",               "x/lime.png",                       "insigne",  "[malus] Ivre, virgule, il/elle essaye de baiser. Bon on connait tous le résultat, ça bande mou, ça fait l'étoile de mer un veritable Acte laborieux");
+//adoption
+const ADOPTION_INGE         = new CategorizedItem("adoption ingé",      "filieres/adopt_inge.png",          "emblème",  "Adopfion ingé");
+const ADOPTION_SCIENCES     = new CategorizedItem("adoption sciences",  "filieres/adopt_sciences.png",      "emblème",  "Adopfion sciences");
+const ADOPTION_DROIT        = new CategorizedItem("adoption droit",     "filieres/adopt_droit.png",         "emblème",  "Adopfion droit");
+const ADOPTION_JAUNE        = new CategorizedItem("adoption jaune",     "filieres/adopt_jaune.png",         "emblème",  "Adopfion jaune");
+const ADOPTION_ROSE         = new CategorizedItem("adoption rose",      "filieres/adopt_paramed.png",       "emblème",  "Adopfion rose");
+const ADOPTION_SAGE_POUF    = new CategorizedItem("adoption sage-pouf", "filieres/adopt_sage-pouf.png",     "emblème",  "Adopfion sage-pouf");
+const ADOPTION_PHARMA       = new CategorizedItem("adoption pharma",    "filieres/adopt_pharma.png",        "emblème",  "Adopfion pharma");
+const ADOPTION_MEDECINE     = new CategorizedItem("adoption médecine",  "filieres/adopt_medecine.png",      "emblème",  "Adopfion médecine");
 //filières
-const ADOPTION_INGE         = new CategorizedItem("adoption ingé", "filieres/adopt_inge.png", "emblème",            "Adopfion ingé");
-const ADOPTION_SCIENCES     = new CategorizedItem("adoption sciences", "filieres/adopt_sciences.png", "emblème",    "Adopfion sciences");
-const ADOPTION_DROIT        = new CategorizedItem("adoption droit", "filieres/adopt_droit.png", "emblème",          "Adopfion droit");
-const ADOPTION_JAUNE        = new CategorizedItem("adoption jaune", "filieres/adopt_jaune.png", "emblème",          "Adopfion jaune");
-const ADOPTION_ROSE         = new CategorizedItem("adoption rose", "filieres/adopt_paramed.png", "emblème",         "Adopfion rose");
-const ADOPTION_SAGE_POUF    = new CategorizedItem("adoption sage-pouf", "filieres/adopt_sage-pouf.png", "emblème",  "Adopfion sage-pouf");
-const ADOPTION_PHARMA       = new CategorizedItem("adoption pharma", "filieres/adopt_pharma.png", "emblème",        "Adopfion pharma");
-const ADOPTION_MEDECINE     = new CategorizedItem("adoption médecine", "filieres/adopt_medecine.png", "emblème",    "Adopfion médecine");
-
-const PINS_INGE             = new CategorizedItem("pin's ingé", "filieres/etoile et foudre.png", "emblème"      ,"pin's ingé");
-const PINS_SCIENCES         = new CategorizedItem("pin's sciences", "filieres/palmes croisees.png", "emblème"   ,"pin's sciences");
-const PINS_DROIT            = new CategorizedItem("pin's droit", "filieres/balance romaine.png", "emblème"      ,"pin's droit");
-const PINS_JAUNE            = new CategorizedItem("pin's jaune", "filieres/livre ouvert et plume.png", "emblème","pin's jaune");
-const PINS_ROSE             = new CategorizedItem("pin's rose", "filieres/ciseaux.png", "emblème"               ,"pin's rose");
-const PINS_SAGE_POUF        = new CategorizedItem("pin's sage-pouf", "filieres/croix ankh.png", "emblème"       ,"pin's sage-pouf");
-const PINS_PHARMA           = new CategorizedItem("pin's Pharma", "filieres/caducee pharmacie.png", "emblème"   ,"pin's Pharma");
-const PINS_MEDECINE         = new CategorizedItem("pin's Médecine", "filieres/caducee medecine.png", "emblème"  ,"pin's Médecine");
-
-// villes
-const PINS_LYON             = new CategorizedItem("pin's Lyon", "villes/Lyon.png",                  "ville",  "pin's Lyon");
-const PINS_GRENOBLE         = new CategorizedItem("pin's Grenoble", "villes/Grenoble.png",          "ville",  "pin's Grenoble");
-const PINS_VALENCE          = new CategorizedItem("pin's Valence", "villes/Valence.png",            "ville",  "pin's Valence");
-const PINS_CLERMONT         = new CategorizedItem("pin's Clermont", "villes/ClermontFerrand.png",   "ville",  "pin's Clermont");
-const PINS_DIJON            = new CategorizedItem("pin's Dijon", "villes/Dijon.png",                "ville",  "pin's Dijon");
-const PINS_MONPEUL          = new CategorizedItem("pin's Monpeul", "villes/Montpellier.png",        "ville",  "pin's Monpeul");
-const PINS_MARSEILLE        = new CategorizedItem("pin's Marseille", "villes/Marseille.png",        "ville",  "pin's Marseille");
-const PINS_NANCY            = new CategorizedItem("pin's Nancy", "villes/Nancy.png",                "ville",  "pin's Nancy");
-const PINS_STASBOURG        = new CategorizedItem("pin's Strasbourg", "villes/Strasbourg.png",      "ville",  "pin's Strasbourg");
+const PINS_INGE             = new CategorizedItem("pin's ingé",         "filieres/etoile et foudre.png",    "emblème",  "pin's ingé");
+const PINS_SCIENCES         = new CategorizedItem("pin's sciences",     "filieres/palmes croisees.png",     "emblème",  "pin's sciences");
+const PINS_DROIT            = new CategorizedItem("pin's droit",        "filieres/balance romaine.png",     "emblème",  "pin's droit");
+const PINS_JAUNE            = new CategorizedItem("pin's jaune",        "filieres/livre ouvert et plume.png","emblème", "pin's jaune");
+const PINS_ROSE             = new CategorizedItem("pin's rose",         "filieres/ciseaux.png",             "emblème",  "pin's rose");
+const PINS_SAGE_POUF        = new CategorizedItem("pin's sage-pouf",    "filieres/croix ankh.png",          "emblème",  "pin's sage-pouf");
+const PINS_PHARMA           = new CategorizedItem("pin's Pharma",       "filieres/caducee pharmacie.png",   "emblème",  "pin's Pharma");
+const PINS_MEDECINE         = new CategorizedItem("pin's Médecine",     "filieres/caducee medecine.png",    "emblème",  "pin's Médecine");
+//villes
+const PINS_LYON             = new CategorizedItem("pin's Lyon",         "villes/Lyon.png",                  "ville",    "pin's Lyon");
+const PINS_GRENOBLE         = new CategorizedItem("pin's Grenoble",     "villes/Grenoble.png",              "ville",    "pin's Grenoble");
+const PINS_VALENCE          = new CategorizedItem("pin's Valence",      "villes/Valence.png",               "ville",    "pin's Valence");
+const PINS_CLERMONT         = new CategorizedItem("pin's Clermont",     "villes/ClermontFerrand.png",       "ville",    "pin's Clermont");
+const PINS_DIJON            = new CategorizedItem("pin's Dijon",        "villes/Dijon.png",                 "ville",    "pin's Dijon");
+const PINS_MONPEUL          = new CategorizedItem("pin's Monpeul",      "villes/Montpellier.png",           "ville",    "pin's Monpeul");
+const PINS_MARSEILLE        = new CategorizedItem("pin's Marseille",    "villes/Marseille.png",             "ville",    "pin's Marseille");
+const PINS_NANCY            = new CategorizedItem("pin's Nancy",        "villes/Nancy.png",                 "ville",    "pin's Nancy");
+const PINS_STASBOURG        = new CategorizedItem("pin's Strasbourg",   "villes/Strasbourg.png",            "ville",    "pin's Strasbourg");
 
 let villeKm = {
     "Lyon"            : { "Lyon":   0, "Grenoble": 113, "Valence": 104, "Clermont": 165, "Dijon": 197, "Monpeul": 306, "Marseille": 315, "Nancy": 407, "Strasbourg": 492},
@@ -118,9 +116,9 @@ let villeKm = {
 };
 
 const resourceList : Array<CategorizedItem | CategorizedMaterial> = [
-    FALUCHE, TEMPS, DISTANCE, TELLIGENCE, PARRAIN, CODE_VILLE, SINGE, BACCHUS, POULE,
+    FALUCHE, TEMPS, DISTANCE, TELLIGENCE, TELLIGENCE_ARTIF, PARRAIN, CODE_VILLE, SINGE, BACCHUS, POULE,
     POINT_COUTURE, CONGRES, CHANT, CLE_DE_SOL, CASSEROLE, CH3CH2OH, BIÈRE, VIN, SEC, VOMI, TRAQUENARD, PACHY, CAPOTE, ANNEAU, PENDU, CROIX_GM,
-    POIREAU, CAROTTE, NAVET, SESQUE, MISSIONNAIRE, POSITION69, LEVRETTE, VIRGINITE, FIN_BAISEUR, LIME,
+    POIREAU, CAROTTE, NAVET, CHOU_FLEUR, SESQUE, MISSIONNAIRE, POSITION69, LEVRETTE, VIRGINITE, FIN_BAISEUR, LIME,
     ADOPTION_INGE, ADOPTION_SCIENCES, ADOPTION_DROIT, ADOPTION_JAUNE, ADOPTION_ROSE, ADOPTION_SAGE_POUF, ADOPTION_PHARMA, ADOPTION_MEDECINE, 
     PINS_INGE, PINS_SCIENCES, PINS_DROIT, PINS_JAUNE, PINS_ROSE, PINS_SAGE_POUF, PINS_PHARMA, PINS_MEDECINE,
     PINS_LYON, PINS_GRENOBLE, PINS_VALENCE, PINS_CLERMONT, PINS_DIJON, PINS_MONPEUL, PINS_MARSEILLE, PINS_NANCY, PINS_STASBOURG
@@ -129,6 +127,19 @@ const resourceList : Array<CategorizedItem | CategorizedMaterial> = [
 let Q = (quantity : number, res : IResource) => new Quantity(quantity, res);
 
 class Scenario {
+    public static populateAll() {
+        resourceList.forEach(
+            r => {
+                if (r.getName() != "vomi" && r.getName() != "CH3CH2OH") {
+                    engine.player.increaseStorage(Q(1000, r))
+                }
+            }
+        );
+        engine.player.increaseStorage(Q(1000, BIÈRE));
+        let qu = engine.player.getResourceInStorage(CH3CH2OH.name) as Quantity;
+        qu.setQuantity(9);
+    }
+
     public static initEngine() : IncrementumLudus {
 
         var engine = new IncrementumLudus();
@@ -642,23 +653,6 @@ class Scenario {
                     .atCostOf(Q(30, SEC))
                     .and(Q(10, POINT_COUTURE))
             )
-            /*
-            .spawnCrafter(
-                new Crafter("blagum")
-                    .thatCraft(Q(1010, PACHY))
-                    .andCraft(Q(1, TELLIGENCE))
-                    .in(7).seconds()
-                    .atCostOf(Q(1, CHANT))
-                    .atCostOf(Q(1, BIÈRE))
-                    .atCostOf(Q(1, SEC))
-                    .atCostOf(Q(1, PINS_INGE))
-                    .atCostOf(Q(1, TELLIGENCE))
-            )
-            .appendTrigger(
-                new Trigger('[Secondaire] Crédibiliquoi?')
-                    .whenReached(Q(1000*1000, PACHY))
-            )
-            */
             .spawnCrafter(
                 new Crafter("Mariage fal, se jurer infidélité")
                     .thatCraft(Q(1, ANNEAU))
@@ -711,8 +705,44 @@ class Scenario {
                             .and(Q(1, CAPOTE))
                             .spawnResource(Q(1, CROIX_GM)) // level 12
                             .spawnResource(Q(1, LEVEL)) // level 12
-                            .thenWin()
+                            .appendTrigger(
+                                this.triggerAncetre()
+                            )
                         )
+            )
+    }
+    
+    private static triggerAncetre() : ITrigger {
+        return new Trigger('Ancêtre')
+            .whenReached(Q(51, TRAQUENARD))
+            .spawnResource(Q(1, LEVEL)) // level 13
+            .spawnCrafter(
+                new Crafter("Blagum")
+                    .thatCraft(Q(1000*1000, PACHY))
+                    .andCraft(Q(1, TELLIGENCE_ARTIF))
+                    .in(7).seconds()
+                    .atCostOf(Q(1, BIÈRE))
+                    .atCostOf(Q(1, SEC))
+                    .atCostOf(Q(1, PINS_INGE))
+                    .atCostOf(Q(1, TELLIGENCE_ARTIF))
+            )
+            .spawnCrafter(
+                new Crafter("Chèvre")
+                    .thatCraft(Q(1, TELLIGENCE_ARTIF))
+                    .thatCraft(Q(1, CH3CH2OH))
+                    .in(4.2).seconds()
+                    .atCostOf(Q(100, TELLIGENCE))
+            )
+            .spawnCrafter(
+                new Crafter("TouZ")
+                    .thatCraft(Q(1, CHOU_FLEUR))
+                    .in(42).seconds()
+                    .atCostOf(Q(1, POIREAU))
+                    .atCostOf(Q(1, NAVET))
+                    .atCostOf(Q(1, CAROTTE))
+                    .atCostOf(Q(1, VIN))
+                    .atCostOf(Q(1, PINS_SCIENCES))
+                    .atCostOf(Q(1, TELLIGENCE))
             )
     }
 }
